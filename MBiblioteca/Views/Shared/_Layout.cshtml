@@ -7,26 +7,26 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MBiblioteca.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header class="nav">
 
-        <a href="#">
+        <a asp-controller="Home" asp-action="Index">
             <img src="/Img/Logo_MinhaBiblioteca.svg" alt="Logo">
         </a>
 
         <div class="nav-itens">
             <ul>
                 <li>
-                    <button class="btn-nav">Emprestimos</button>
+                    <button asp-controller="Emprestimos" asp-action="Index" class="btn-nav">Emprestimos</button>
                 </li>
                 <li>
                     <div class="dropdown">
                         <button class="btn-nav">Cadastros</button>
                         <div class="dropdown-nav">
-                            <a href="#" style="color: black;">Livros</a>
-                            <a href="#" style="color: black;">Leitores</a>
+                            <a asp-controller="Livros" asp-action="Index" style="color: black;">Livros</a>
+                            <a asp-controller="Leitores" asp-action="Index" style="color: black;">Leitores</a>
                         </div>
                     </div>
                 </li>

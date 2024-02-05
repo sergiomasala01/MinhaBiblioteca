@@ -14,7 +14,7 @@ namespace MBiblioteca.Models
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [StringLength(60, MinimumLength = 2, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres")]
         public string? Autor { get; set; }
-
+     
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string? Genero { get; set; }
 
@@ -24,8 +24,10 @@ namespace MBiblioteca.Models
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [DataType(DataType.DateTime, ErrorMessage = "O campo {0} está em formato incorreto")]
-        [Display(Name = "Ano de Publicacao")]
+        [Display(Name = "Data de Publicacao")]
         public DateTime AnoPublicacao { get; set; }
+
+       [Display(Name = "Quantidade")]
         public int QuantidadeDisponivel { get; set; }
 
     }

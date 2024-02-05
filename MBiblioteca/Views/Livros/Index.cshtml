@@ -1,0 +1,60 @@
+﻿@model IEnumerable<LivroModel>
+
+@{
+    ViewData["Title"] = "Cadastro de Livros";
+}
+
+<h2 style="margin-top: 40px;">Cadastro de Livros</h2>
+
+<table class="table table-bordered" style="margin-top: 40px;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Autor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnoPublicacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantidadeDisponivel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Titulo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Autor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Genero)
+                    </td>
+                    <td>
+                        @item.AnoPublicacao.ToString("dd/mm/yyyy")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.QuantidadeDisponivel)
+                    </td>
+                    <td>
+                    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id"><i class="fa-solid fa-pen"></i></a> |
+                    <a asp-action="Details" class="btn btn-info" asp-route-id="@item.Id"><i class="fa-regular fa-note-sticky"></i></a> |
+                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id"><i class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>
+
+
+<a asp-controller="Livros" asp-action="Create" class="btn btn-success" style="float: right;">Cadastrar</a>
