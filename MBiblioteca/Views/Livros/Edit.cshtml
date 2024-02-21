@@ -1,0 +1,57 @@
+﻿@model MBiblioteca.Models.LivroModel;
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h2 style="margin-top: 40px">Editar Livro</h2>
+
+<form asp-action="Edit" class="row g-3" style="margin-top: 40px">
+    <div class="col-md-4">
+        <label asp-for="Titulo" class="form-label">Titulo</label>
+        <input asp-for="Titulo" class="form-control">
+        <span asp-validation-for="Titulo" class="text-danger"></span>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="Autor" class="form-label">Autor</label>
+        <input asp-for="Autor" class="form-control" id="Autor">
+        <span asp-validation-for="Autor" class="text-danger"></span>
+    </div>
+    <div class="col-4">
+        <label asp-for="Genero" class="form-label">Gênero</label>
+        <select asp-for="Genero" class="form-select">
+            <option value="">Selecione</option>
+            <option>Ficção Científica</option>
+            <option>Fantasia</option>
+            <option>Romance</option>
+            <option>Mistério</option>
+            <option>Suspense Psicológico</option>
+            <option>Terror</option>
+            <option>Aventura</option>
+            <option>Biografia</option>
+            <option>Comédia</option>
+            <option>Não Ficção</option>
+        </select>
+        <span asp-validation-for="Genero" class="text-danger"></span>
+    </div>
+    <div class="col-9">
+        <label asp-for="Sinopse" class="form-label">Sinopse</label>
+        <input asp-for="Sinopse" class="form-control" placeholder="Escreva a sinopse">
+        <span asp-validation-for="Sinopse" class="text-danger"></span>
+    </div>
+    <div class="col-md-3">
+        <label asp-for="AnoPublicacao" class="form-label">Data de Publicação</label>
+        <input asp-for="AnoPublicacao" type="date" class="form-control" id="DataPublicacao">
+        <span asp-validation-for="AnoPublicacao" class="text-danger"></span>
+    </div>
+    <div class="col-12">
+        <button asp-action="Index" class="btn btn-warning">Voltar</button> |
+        <button type="submit" class="btn btn-success">Editar</button>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

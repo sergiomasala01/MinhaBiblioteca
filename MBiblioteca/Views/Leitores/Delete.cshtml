@@ -1,0 +1,75 @@
+﻿@model MBiblioteca.Models.LeitorModel;
+
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<h2 style="margin-top: 40px">Excluir Leitores</h2>
+
+
+
+<form asp-action="Delete" class="row g-3" style="margin-top: 40px">
+
+    <h4>Deseja mesmo excluir esse leitor?</h4>
+
+    <div class="col-md-6">
+        <label asp-for="Nome" class="form-label">Nome</label>
+        <input asp-for="Nome" class="form-control" disabled>
+    </div>
+    <div class="col-md-2">
+        <label asp-for="CPF" class="form-label">CPF</label>
+        <input asp-for="CPF" class="form-control" id="cpf" disabled>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="Email" class="form-label">Email</label>
+        <input asp-for="Email" class="form-control" disabled>
+    </div>
+    <div class="col-md-2">
+        <label asp-for="Telefone" class="form-label">Telefone</label>
+        <input asp-for="Telefone" class="form-control" id="phone_with_ddd" disabled>
+    </div>
+    <div class="col-md-2">
+        <label asp-for="CEP" class="form-label">CEP</label>
+        <input asp-for="CEP" type="text" class="form-control" id="cep" disabled>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="Logadouro" class="form-label">Logadouro</label>
+        <input asp-for="Logadouro" class="form-control" id="logadouro" disabled>
+    </div>
+    <div class="col-md-2">
+        <label asp-for="Numero" class="form-label">Numero</label>
+        <input asp-for="Numero" class="form-control" disabled>
+    </div>
+    <div class="col-md-2">
+        <label asp-for="Complemento" class="form-label">Complemento</label>
+        <input asp-for="Complemento" class="form-control" disabled>
+    </div>
+    <div class="col-md-3">
+        <label asp-for="Bairro" class="form-label">Bairro</label>
+        <input asp-for="Bairro" class="form-control" id="bairro" disabled>
+    </div>
+    <div class="col-md-3">
+        <label asp-for="Localidade" class="form-label">Cidade</label>
+        <input asp-for="Localidade" class="form-control" id="localidade" disabled>
+    </div>
+    <div class="col-md-1">
+        <label asp-for="UF" class="form-label">UF</label>
+        <input asp-for="UF" class="form-control" id="uf" disabled>
+    </div>
+    <div class="col-md-3">
+        <label asp-for="DataNascimento" class="form-label">Data de Nascimento</label>
+        <input asp-for="DataNascimento" type="date" class="form-control" id="DataNascimento" disabled>
+    </div>
+
+    <div class="col-12">
+        <a asp-action="Index" class="btn btn-warning">Voltar</a> |
+        <button type="submit" class="btn btn-danger">Excluir</button>
+    </div>
+</form>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,39 @@
+﻿@model MBiblioteca.Models.LivroModel;
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h2 style="margin-top: 40px">Detalhes do Livro</h2>
+
+<form asp-action="Details" class="row g-3" style="margin-top: 40px">
+    <div class="col-md-4">
+        <label asp-for="Titulo" class="form-label">Titulo</label>
+        <input asp-for="Titulo" class="form-control" disabled>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="Autor" class="form-label">Autor</label>
+        <input asp-for="Autor" class="form-control" id="Autor" disabled>
+    </div>
+    <div class="col-4">
+        <label asp-for="Genero" class="form-label">Gênero</label>
+        <input asp-for="Genero" class="form-control" id="Genero" disabled>
+    </div>
+    <div class="col-9">
+        <label asp-for="Sinopse" class="form-label">Sinopse</label>
+        <textarea asp-for="Sinopse" class="form-control" aria-label="With textarea" disabled></textarea>
+    </div>
+    <div class="col-md-3">
+        <label asp-for="AnoPublicacao" class="form-label">Data de Publicação</label>
+        <input asp-for="AnoPublicacao" type="date" class="form-control" id="DataPublicacao" disabled>
+    </div>
+    <div class="col-12">
+        <button asp-action="Index" class="btn btn-warning">Voltar</button>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
