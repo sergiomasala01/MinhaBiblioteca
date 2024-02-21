@@ -19,7 +19,7 @@ namespace MBiblioteca.Models
         public string? Genero { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [StringLength(300, MinimumLength = 2, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres")]
+        [StringLength(1000, MinimumLength = 2, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres")]
         public string? Sinopse { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]

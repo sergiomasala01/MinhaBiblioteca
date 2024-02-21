@@ -4,9 +4,9 @@
     ViewData["Title"] = "Editar";
 }
 
-<h2 style="margin-top: 40px">Cadastrar Livro</h2>
+<h2 style="margin-top: 40px">Editar Livro</h2>
 
-<form asp-action="Create" class="row g-3" style="margin-top: 40px">
+<form asp-action="Edit" class="row g-3" style="margin-top: 40px">
     <div class="col-md-4">
         <label asp-for="Titulo" class="form-label">Titulo</label>
         <input asp-for="Titulo" class="form-control">
@@ -46,7 +46,7 @@
     </div>
     <div class="col-12">
         <button asp-action="Index" class="btn btn-warning">Voltar</button> |
-        <button type="submit" class="btn btn-success">Cadastrar</button>
+        <button type="submit" class="btn btn-success">Editar</button>
     </div>
 </form>
 

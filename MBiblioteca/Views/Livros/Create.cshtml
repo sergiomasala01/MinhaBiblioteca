@@ -7,12 +7,12 @@
 <h2 style="margin-top: 40px">Cadastrar Livro</h2>
 
 <form asp-action="Create" class="row g-3" style="margin-top: 40px">
-    <div class="col-md-4">
+    <div class="col-4">
         <label asp-for="Titulo" class="form-label">Titulo</label>
         <input asp-for="Titulo" class="form-control">
         <span asp-validation-for="Titulo" class="text-danger"></span>
     </div>
-    <div class="col-md-4">
+    <div class="col-4">
         <label asp-for="Autor" class="form-label">Autor</label>
         <input asp-for="Autor" class="form-control" id="Autor">
         <span asp-validation-for="Autor" class="text-danger"></span>
@@ -45,7 +45,7 @@
         <span asp-validation-for="AnoPublicacao" class="text-danger"></span>
     </div>
     <div class="col-12">
-        <button asp-action="Index" class="btn btn-warning">Voltar</button> |
+        <a asp-action="Index" class="btn btn-warning">Voltar</a> |
         <button type="submit" class="btn btn-success">Cadastrar</button> 
     </div>
 </form>
